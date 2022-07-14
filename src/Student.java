@@ -1,6 +1,7 @@
 package src;
 
-import java.sql.SQLOutput;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 public class Student {
     private int studentId;
@@ -41,14 +42,17 @@ public class Student {
         this.secondName = secondName;
     }
 
-    public void displayInfo()
+    public void displayInfo(String room, int hour)
     {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
         System.out.println("----------------------------------------------------------");
         System.out.println("                 STUDENT "+this.getStudentId()+"            ");
         System.out.println("First Name           |  "+this.getFirstName()+"               |");
         System.out.println("Second Name          |  "+this.getSecondName()+"             |\n");
-        System.out.println("Raport generated on 08.07.2022 13:45");
-        System.out.println("Room number: \n");
+        System.out.println("Raport generated on " + dtf.format(now));
+        System.out.println("Room number: " + room + "\n");
 
 
         System.out.println("----------------------------------------------------------");

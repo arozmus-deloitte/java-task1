@@ -9,21 +9,16 @@ public class FullTimeStudent extends Student {
     }
 
     public void serve(String room, int hour) throws Exception {
+        room = room.toUpperCase();
 
-        if (!Objects.equals(room, "A123") || !room.equals("B123")) {
-            System.out.println("correct room");
-        } else {
+        if (!Objects.equals(room, "A123") && !Objects.equals(room, "B123"))
             throw new Exception("This room is incorrect");
-        }
 
 
-        if ((Objects.equals(room, "A123") && (hour >= 8 && hour <= 16)) || (Objects.equals(room, "B123") && (hour >= 9 && hour <= 17))) {
-            System.out.println("correct hour");
-        } else {
+        if (!(Objects.equals(room, "A123") && (hour >= 8 && hour <= 16)) && !(Objects.equals(room, "B123") && (hour >= 9 && hour <= 17)))
             throw new Exception("This hour is incorrect");
-        }
 
-        displayInfo();
+        displayInfo(room, hour);
 
     }
 }
