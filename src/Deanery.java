@@ -1,11 +1,10 @@
 package src;
 
 public class Deanery {
-    public static void main(String[] args)
-    {
-        Student student = new Student(252954,"ola","rozmus");
+    public static void main(String[] args) throws Exception {
+        FullTimeStudent fullTimeStudent = new FullTimeStudent(252954,"ola","rozmus");
 
-        student.displayInfo();
+        fullTimeStudent.serve("A123",20);
         System.out.println("hello");
     }
 }
