@@ -8,6 +8,9 @@ public class FullTimeStudent extends Student {
         super(studentId, firstName, secondName);
     }
 
+    //TODO same as in the PartTimeStudent class
+    // + as you can see there is some duplication of a code in here -> it would be better to keep the verification logic in the Student class
+    // and only keep the proper Rooms collection in the child classes
     public void serve(String room, int hour) throws Exception {
         room = room.toUpperCase();
 
